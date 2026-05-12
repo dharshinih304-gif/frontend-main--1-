@@ -15,48 +15,48 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center bg-slate-50 dark:bg-slate-950 overflow-hidden">
-      {/* Background Decoration - simplified for better network performance */}
-      <div className="absolute inset-0 z-0 bg-slate-50 dark:bg-[#020617] opacity-100">
-        <div className="absolute top-0 -left-1/4 w-1/2 h-1/2 bg-blue-600/5 dark:bg-blue-600/10 rounded-full blur-[120px]" />
+    <div className="relative min-h-screen flex items-center justify-center bg-slate-50 dark:bg-[#0f172a] overflow-hidden">
+      {/* Background Decoration */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-0 -left-1/4 w-1/2 h-1/2 bg-accent/5 dark:bg-accent/10 rounded-full blur-[120px]" />
         <div className="absolute bottom-0 -right-1/4 w-1/2 h-1/2 bg-slate-800/5 dark:bg-slate-800/10 rounded-full blur-[120px]" />
       </div>
 
-      <div className="relative z-10 w-full max-w-md p-8 bg-white/80 dark:bg-slate-900/40 backdrop-blur-xl border border-slate-200 dark:border-white/10 rounded-3xl shadow-2xl mx-4">
-        <div className="flex flex-col items-center mb-8">
-          <div className="w-16 h-16 bg-accent/10 rounded-2xl flex items-center justify-center mb-4">
-            <Ship className="w-10 h-10 text-accent" />
+      <div className="relative z-10 w-full max-w-md p-10 bg-white dark:bg-[#1e293b] border border-slate-200 dark:border-white/10 rounded-[40px] shadow-2xl mx-4">
+        <div className="flex flex-col items-center mb-10">
+          <div className="w-20 h-20 bg-slate-900 dark:bg-accent rounded-3xl flex items-center justify-center mb-6 shadow-2xl shadow-slate-900/20 dark:shadow-accent/20">
+            <Ship className="w-10 h-10 text-white" />
           </div>
-          <h1 className="text-3xl font-bold text-slate-900 dark:text-white tracking-tight text-center">Sellamsoft Portal</h1>
-          <p className="text-slate-500 dark:text-slate-400 mt-2 text-center">Sign in to your inspection dashboard</p>
+          <h1 className="text-4xl font-black text-slate-900 dark:text-white tracking-tight text-center uppercase">Sellamsoft</h1>
+          <p className="text-slate-600 dark:text-slate-300 mt-4 text-center font-bold tracking-tight">Vessel Inspection Dashboard</p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-5">
+        <form onSubmit={handleSubmit} className="space-y-6">
           <div className="relative">
-            <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5 ml-1">Email Address</label>
-            <div className="relative">
-              <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500" />
+            <label className="block text-[10px] font-black text-slate-600 dark:text-slate-400 mb-2 ml-1 uppercase tracking-widest">Email Address</label>
+            <div className="relative group">
+              <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-accent transition-colors" />
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="name@company.com"
-                className="w-full pl-10 pr-4 py-3 bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl focus:ring-2 focus:ring-accent focus:border-transparent transition-all outline-none text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-600"
+                className="w-full pl-12 pr-4 py-4 bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 rounded-2xl focus:ring-2 focus:ring-accent focus:bg-white dark:focus:bg-slate-800 transition-all outline-none text-slate-900 dark:text-white font-bold placeholder:text-slate-400 dark:placeholder:text-slate-600 shadow-inner"
                 required
               />
             </div>
           </div>
 
           <div className="relative">
-            <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5 ml-1">Password</label>
-            <div className="relative">
-              <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-500" />
+            <label className="block text-[10px] font-black text-slate-600 dark:text-slate-400 mb-2 ml-1 uppercase tracking-widest">Password</label>
+            <div className="relative group">
+              <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 group-focus-within:text-accent transition-colors" />
               <input
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="••••••••"
-                className="w-full pl-10 pr-4 py-3 bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl focus:ring-2 focus:ring-accent focus:border-transparent transition-all outline-none text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-600"
+                className="w-full pl-12 pr-4 py-4 bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 rounded-2xl focus:ring-2 focus:ring-accent focus:bg-white dark:focus:bg-slate-800 transition-all outline-none text-slate-900 dark:text-white font-bold placeholder:text-slate-400 dark:placeholder:text-slate-600 shadow-inner"
                 required
               />
             </div>
@@ -65,16 +65,16 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full py-4 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white rounded-xl font-bold text-lg transition-all transform active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 group shadow-lg shadow-blue-500/25"
+            className="w-full py-4 bg-slate-900 dark:bg-accent hover:opacity-90 text-white rounded-2xl font-black text-xs tracking-widest uppercase transition-all transform active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3 group shadow-2xl shadow-slate-900/20 dark:shadow-accent/20"
           >
             {isLoading ? 'Authenticating...' : 'Sign In'}
             {!isLoading && <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />}
           </button>
         </form>
 
-        <div className="mt-8 pt-6 border-t border-white/5 text-center">
-          <p className="text-slate-500 text-sm">
-            Need access? <span className="text-accent hover:underline cursor-pointer">Contact Administration</span>
+        <div className="mt-10 pt-8 border-t border-slate-200 dark:border-white/5 text-center">
+          <p className="text-slate-500 dark:text-slate-400 text-[11px] font-bold tracking-tight">
+            Need access? <span className="text-accent hover:underline cursor-pointer font-black">Contact Administration</span>
           </p>
         </div>
       </div>

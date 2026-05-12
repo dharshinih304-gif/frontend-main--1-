@@ -91,13 +91,13 @@ export default function AdminPage() {
     <div className="space-y-10">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
-          <h1 className="text-4xl font-black tracking-tight text-slate-900 dark:text-white uppercase">Admin Control Panel</h1>
-          <p className="text-slate-600 dark:text-slate-300 mt-2 font-bold tracking-tight">Manage global system access, permissions, and security protocols.</p>
+          <h1 className="text-4xl font-black tracking-tight text-slate-900 dark:text-white uppercase leading-none">Admin Control Panel</h1>
+          <p className="text-slate-600 dark:text-slate-300 mt-3 font-bold tracking-tight">Manage global system access, permissions, and security protocols.</p>
         </div>
         <div className="flex items-center gap-3">
-          <div className="px-4 py-2 bg-emerald-500/10 text-emerald-600 rounded-2xl text-xs font-black flex items-center gap-2 border border-emerald-500/20">
-            <ShieldCheck className="w-4 h-4" />
-            SECURE SYSTEM ACTIVE
+          <div className="px-6 py-3 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 rounded-2xl text-[10px] font-black flex items-center gap-2 border-2 border-emerald-500/20 shadow-xl shadow-emerald-500/5 uppercase tracking-[0.2em]">
+            <ShieldCheck className="w-5 h-5" />
+            Secure System Active
           </div>
         </div>
       </div>
@@ -116,20 +116,20 @@ export default function AdminPage() {
                   <p className="text-[10px] font-black text-slate-600 dark:text-slate-300 uppercase tracking-widest">{systemUsers.length} TOTAL ACCOUNTS</p>
                 </div>
               </div>
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-4">
                 <button 
                   onClick={testApiGateway}
-                  className="text-[10px] font-black bg-emerald-500/10 text-emerald-600 px-4 py-2 rounded-xl flex items-center gap-2 hover:bg-emerald-500 hover:text-white transition-all border border-emerald-500/20"
+                  className="text-[10px] font-black bg-white dark:bg-slate-900 text-slate-900 dark:text-white px-5 py-3 rounded-2xl flex items-center gap-2 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all border-2 border-slate-200 dark:border-white/10 uppercase tracking-widest shadow-xl shadow-slate-200/10"
                 >
-                  <ShieldAlert className="w-3.5 h-3.5" />
-                  API GATEWAY
+                  <ShieldAlert className="w-4 h-4 text-accent" />
+                  API Gateway
                 </button>
                 <button 
                   onClick={() => alert('Add user modal coming soon')}
-                  className="text-[10px] font-black bg-slate-900 dark:bg-accent text-white px-5 py-3 rounded-2xl flex items-center gap-2 hover:scale-105 active:scale-95 transition-all shadow-xl shadow-slate-900/10"
+                  className="text-[10px] font-black bg-slate-900 dark:bg-accent text-white px-6 py-4 rounded-2xl flex items-center gap-3 hover:opacity-90 active:scale-95 transition-all shadow-2xl shadow-slate-900/20 dark:shadow-accent/20 uppercase tracking-widest"
                 >
                   <UserPlus className="w-4 h-4" />
-                  NEW USER
+                  New User
                 </button>
               </div>
             </div>
@@ -212,21 +212,21 @@ export default function AdminPage() {
 
         {/* Sidebar Settings Section */}
         <div className="space-y-8">
-          <div className="bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-[32px] p-8 shadow-xl shadow-slate-200/10 dark:shadow-none">
-            <h3 className="font-black text-sm uppercase tracking-[0.2em] text-slate-900 dark:text-slate-200 mb-8">Security Policies</h3>
-            <div className="space-y-6">
+          <div className="bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-white/10 rounded-[40px] p-10 shadow-2xl shadow-slate-200/20 dark:shadow-none">
+            <h3 className="font-black text-[10px] uppercase tracking-[0.3em] text-slate-500 dark:text-slate-400 mb-10 border-b border-slate-100 dark:border-white/5 pb-4">Security Policies</h3>
+            <div className="space-y-8">
               {policies.map((policy) => (
                 <div key={policy.id} className="flex items-center justify-between">
-                  <span className="text-xs font-black text-slate-600 dark:text-slate-300 uppercase tracking-tight">{policy.label}</span>
+                  <span className="text-[11px] font-black text-slate-900 dark:text-slate-200 uppercase tracking-tight">{policy.label}</span>
                   <div 
                     onClick={() => togglePolicy(policy.id)}
                     className={cn(
-                      "w-12 h-6 rounded-full relative cursor-pointer transition-all border-2",
-                      policy.status ? "bg-accent border-accent" : "bg-slate-200 border-slate-200 dark:bg-slate-800 dark:border-slate-800"
+                      "w-14 h-7 rounded-full relative cursor-pointer transition-all border-2",
+                      policy.status ? "bg-accent border-accent shadow-lg shadow-accent/20" : "bg-slate-100 border-slate-200 dark:bg-slate-900 dark:border-white/10"
                     )}
                   >
                     <div className={cn(
-                      "absolute top-0.5 w-4 h-4 bg-white rounded-full transition-all shadow-sm",
+                      "absolute top-0.5 w-5 h-5 bg-white rounded-full transition-all shadow-md",
                       policy.status ? "right-0.5" : "left-0.5"
                     )} />
                   </div>

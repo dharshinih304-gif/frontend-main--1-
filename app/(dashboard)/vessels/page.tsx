@@ -82,8 +82,8 @@ export default function VesselsPage() {
       {/* Simplified Header with Vessel Selector */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-3xl p-8 shadow-sm">
         <div className="space-y-1">
-          <h1 className="text-3xl font-black tracking-tight text-black dark:text-white uppercase">Inspection Categories</h1>
-          <p className="text-slate-500">Manage 51 inspection categories for the selected vessel</p>
+          <h1 className="text-3xl font-black tracking-tight text-slate-900 dark:text-white uppercase leading-none">Inspection Categories</h1>
+          <p className="text-slate-600 dark:text-slate-300 mt-2 font-bold tracking-tight">Manage 51 inspection categories for the selected vessel</p>
         </div>
 
         <div className="relative">
@@ -93,7 +93,7 @@ export default function VesselsPage() {
             placeholder="Search 51 inspection categories..."
             value={categorySearch}
             onChange={(e) => setCategorySearch(e.target.value)}
-            className="pl-11 pr-4 py-3 bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl text-sm outline-none focus:ring-2 ring-accent transition-all min-w-[300px]"
+            className="pl-12 pr-6 py-4 bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 rounded-2xl text-sm font-bold outline-none focus:ring-2 ring-accent focus:bg-white dark:focus:bg-slate-800 transition-all min-w-[350px] shadow-inner"
           />
         </div>
       </div>
@@ -103,16 +103,16 @@ export default function VesselsPage() {
         {INSPECTION_TABLES.filter(t => t.toLowerCase().includes(categorySearch.toLowerCase())).map((table) => (
           <motion.button 
             key={table}
-            whileHover={{ y: -6, scale: 1.02 }}
+            whileHover={{ y: -8, scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             onClick={() => handleCategoryClick(table)}
-            className="group relative p-6 bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-3xl text-left transition-all hover:shadow-2xl hover:shadow-accent/10 hover:border-accent shadow-sm"
+            className="group relative p-8 bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-white/10 rounded-[32px] text-left transition-all hover:shadow-2xl hover:shadow-accent/20 hover:border-accent shadow-xl shadow-slate-200/20 dark:shadow-none"
           >
-            <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5 bg-slate-50 dark:bg-white/10 group-hover:bg-accent group-hover:text-white transition-all shadow-inner">
-              <FileText className="w-6 h-6" />
+            <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 bg-slate-50 dark:bg-slate-900 group-hover:bg-accent group-hover:text-white transition-all shadow-inner group-hover:shadow-accent/20 group-hover:rotate-6">
+              <FileText className="w-7 h-7" />
             </div>
             
-            <h3 className="text-xs font-black uppercase tracking-tight leading-tight text-black dark:text-white group-hover:text-accent transition-colors break-words">
+            <h3 className="text-[11px] font-black uppercase tracking-widest leading-relaxed text-slate-900 dark:text-white group-hover:text-accent transition-colors break-words">
               {table.split('_').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
             </h3>
 

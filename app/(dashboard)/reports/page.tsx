@@ -94,12 +94,12 @@ export default function ReportsPage() {
     <div className="space-y-8">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
-          <h1 className="text-3xl font-black tracking-tight text-slate-900 dark:text-white uppercase">Inspection Reports</h1>
-          <p className="text-slate-600 dark:text-slate-300 mt-1 font-bold tracking-tight">Manage and audit finalized vessel inspection logs from Supabase.</p>
+          <h1 className="text-3xl font-black tracking-tight text-slate-900 dark:text-white uppercase leading-none">Inspection Reports</h1>
+          <p className="text-slate-600 dark:text-slate-300 mt-2 font-bold tracking-tight">Manage and audit finalized vessel inspection logs from Supabase.</p>
         </div>
         <button 
           onClick={() => router.push('/vessels')}
-          className="flex items-center gap-2 px-6 py-3 bg-accent text-white rounded-2xl text-sm font-bold hover:bg-blue-600 transition-all shadow-xl shadow-accent/20"
+          className="flex items-center gap-3 px-6 py-4 bg-slate-900 dark:bg-accent text-white rounded-2xl text-[11px] font-black uppercase tracking-[0.2em] hover:opacity-90 active:scale-95 transition-all shadow-2xl shadow-slate-900/20 dark:shadow-accent/30"
         >
           <Plus className="w-5 h-5" />
           New Inspection
@@ -110,12 +110,12 @@ export default function ReportsPage() {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
         <div className="p-6 bg-emerald-500/5 border border-emerald-500/10 rounded-3xl">
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-emerald-500 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-emerald-500/20">
-              <CheckCircle className="w-6 h-6" />
+            <div className="w-14 h-14 bg-emerald-500 rounded-2xl flex items-center justify-center text-white shadow-xl shadow-emerald-500/20">
+              <CheckCircle className="w-7 h-7" />
             </div>
             <div>
-              <p className="text-[10px] font-black text-emerald-700 dark:text-emerald-400 uppercase tracking-widest">Approved</p>
-              <p className="text-2xl font-black text-slate-900 dark:text-white">
+              <p className="text-[11px] font-black text-emerald-700 dark:text-emerald-400 uppercase tracking-[0.2em]">Approved</p>
+              <p className="text-3xl font-black text-slate-900 dark:text-white tracking-tight mt-1">
                 {reports.filter(r => r.status === 'APPROVED').length}
               </p>
             </div>
@@ -123,12 +123,12 @@ export default function ReportsPage() {
         </div>
         <div className="p-6 bg-orange-500/5 border border-orange-500/10 rounded-3xl">
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-orange-500 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-orange-500/20">
-              <AlertCircle className="w-6 h-6" />
+            <div className="w-14 h-14 bg-orange-500 rounded-2xl flex items-center justify-center text-white shadow-xl shadow-orange-500/20">
+              <AlertCircle className="w-7 h-7" />
             </div>
             <div>
-              <p className="text-[10px] font-black text-orange-700 dark:text-orange-400 uppercase tracking-widest">Pending</p>
-              <p className="text-2xl font-black text-slate-900 dark:text-white">
+              <p className="text-[11px] font-black text-orange-700 dark:text-orange-400 uppercase tracking-[0.2em]">Pending</p>
+              <p className="text-3xl font-black text-slate-900 dark:text-white tracking-tight mt-1">
                 {reports.filter(r => r.status === 'PENDING').length}
               </p>
             </div>
@@ -136,12 +136,12 @@ export default function ReportsPage() {
         </div>
         <div className="p-6 bg-red-500/5 border border-red-500/10 rounded-3xl">
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-red-500 rounded-2xl flex items-center justify-center text-white shadow-lg shadow-red-500/20">
-              <XCircle className="w-6 h-6" />
+            <div className="w-14 h-14 bg-red-500 rounded-2xl flex items-center justify-center text-white shadow-xl shadow-red-500/20">
+              <XCircle className="w-7 h-7" />
             </div>
             <div>
-              <p className="text-[10px] font-black text-red-700 dark:text-red-400 uppercase tracking-widest">Rejected</p>
-              <p className="text-2xl font-black text-slate-900 dark:text-white">
+              <p className="text-[11px] font-black text-red-700 dark:text-red-400 uppercase tracking-[0.2em]">Rejected</p>
+              <p className="text-3xl font-black text-slate-900 dark:text-white tracking-tight mt-1">
                 {reports.filter(r => r.status === 'REJECTED').length}
               </p>
             </div>
@@ -157,10 +157,10 @@ export default function ReportsPage() {
               key={tab}
               onClick={() => setActiveTab(tab)}
               className={cn(
-                "flex-1 lg:flex-none px-6 py-2.5 rounded-xl text-xs font-black transition-all uppercase tracking-widest",
+                "flex-1 lg:flex-none px-8 py-3 rounded-xl text-[10px] font-black transition-all uppercase tracking-[0.2em]",
                 activeTab === tab 
-                  ? "bg-white dark:bg-accent text-accent dark:text-white shadow-md shadow-accent/10" 
-                  : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
+                  ? "bg-white dark:bg-accent text-slate-900 dark:text-white shadow-xl shadow-slate-900/10 dark:shadow-accent/20" 
+                  : "text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
               )}
             >
               {tab}

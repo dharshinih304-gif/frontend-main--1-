@@ -146,20 +146,20 @@ export default function DashboardPage() {
     <div className="space-y-8 pb-12 print:p-0 print:m-0">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 print:hidden">
         <div>
-          <h1 className="text-3xl font-black tracking-tight text-black dark:text-white uppercase">Vessel Inspection System</h1>
-          <p className="text-slate-500 mt-1">Welcome back, {user?.name} ({user?.role})</p>
+          <h1 className="text-3xl font-black tracking-tight text-slate-900 dark:text-white uppercase leading-none">Vessel Inspection System</h1>
+          <p className="text-slate-600 dark:text-slate-300 mt-2 font-bold tracking-tight">Welcome back, {user?.name} ({user?.role})</p>
         </div>
         <div className="flex gap-2">
           <button 
             onClick={exportToExcel}
-            className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-white/5 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 rounded-xl text-xs font-bold hover:bg-emerald-500 hover:text-white transition-all shadow-sm"
+            className="flex items-center gap-2 px-5 py-2.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/10 text-emerald-600 dark:text-emerald-400 rounded-2xl text-[11px] font-black uppercase tracking-widest hover:bg-emerald-600 hover:text-white dark:hover:bg-emerald-500 transition-all shadow-xl shadow-slate-200/10 active:scale-95"
           >
             <Download className="w-3.5 h-3.5" />
             Excel Export
           </button>
           <button 
             onClick={exportToPDF}
-            className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-white/5 border border-blue-500/20 text-blue-600 dark:text-blue-400 rounded-xl text-xs font-bold hover:bg-blue-500 hover:text-white transition-all shadow-sm"
+            className="flex items-center gap-2 px-5 py-2.5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/10 text-blue-600 dark:text-blue-400 rounded-2xl text-[11px] font-black uppercase tracking-widest hover:bg-blue-600 hover:text-white dark:hover:bg-blue-500 transition-all shadow-xl shadow-slate-200/10 active:scale-95"
           >
             <FileText className="w-3.5 h-3.5" />
             PDF Export
@@ -175,15 +175,15 @@ export default function DashboardPage() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.05 }}
-            className="p-5 bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl shadow-sm hover:border-slate-300 dark:hover:border-white/20 transition-all"
+            className="p-6 bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-white/10 rounded-3xl shadow-xl shadow-slate-200/20 dark:shadow-none hover:border-accent/50 dark:hover:border-accent transition-all group"
           >
-            <div className="flex items-center gap-4">
-              <div className={cn("p-2.5 rounded-xl", stat.bg)}>
-                <stat.icon className={cn("w-5 h-5", stat.color)} />
+            <div className="flex items-center gap-5">
+              <div className={cn("p-3 rounded-2xl transition-transform group-hover:scale-110", stat.bg)}>
+                <stat.icon className={cn("w-6 h-6", stat.color)} />
               </div>
               <div>
-                <p className="text-slate-500 text-[10px] font-bold uppercase tracking-wider">{stat.label}</p>
-                <h3 className="text-xl font-black mt-0.5 text-black dark:text-white">{stat.value}</h3>
+                <p className="text-slate-600 dark:text-slate-300 text-[10px] font-black uppercase tracking-[0.2em]">{stat.label}</p>
+                <h3 className="text-2xl font-black mt-1 text-slate-900 dark:text-white tracking-tight">{stat.value}</h3>
               </div>
             </div>
           </motion.div>
@@ -192,26 +192,26 @@ export default function DashboardPage() {
 
       {/* 51 Categories Grid Section on Dashboard */}
       <div className="bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-3xl p-6 shadow-sm">
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="text-sm font-black flex items-center gap-2 text-black dark:text-white uppercase tracking-wider">
-            <div className="p-1.5 bg-accent/10 rounded-lg text-accent">
-              <CheckCircle2 className="w-4 h-4" />
+        <div className="flex items-center justify-between mb-8">
+          <h2 className="text-sm font-black flex items-center gap-2 text-slate-900 dark:text-white uppercase tracking-[0.2em]">
+            <div className="p-2 bg-accent rounded-xl text-white shadow-lg shadow-accent/20">
+              <CheckCircle2 className="w-5 h-5" />
             </div>
             Inspection Modules
           </h2>
-          <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{INSPECTION_TABLES.length} Categories</span>
+          <span className="text-[10px] font-black text-slate-600 dark:text-slate-300 uppercase tracking-[0.2em] bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full">{INSPECTION_TABLES.length} Categories</span>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
           {INSPECTION_TABLES.map((table) => (
             <button 
               key={table}
               onClick={() => setSelectedTable(table)}
               className={cn(
-                "px-3 py-1.5 rounded-lg border text-left transition-all text-[11px] font-semibold truncate",
+                "px-4 py-2.5 rounded-xl border-2 transition-all text-[10px] font-black uppercase tracking-tight truncate active:scale-95 shadow-sm",
                 selectedTable === table 
-                  ? "bg-accent text-white border-accent shadow-md shadow-accent/20" 
-                  : "bg-slate-50 dark:bg-white/5 border-transparent text-slate-600 dark:text-slate-400 hover:border-slate-200 dark:hover:border-white/10"
+                  ? "bg-slate-900 dark:bg-accent text-white border-slate-900 dark:border-accent shadow-xl shadow-slate-900/10 dark:shadow-accent/20" 
+                  : "bg-white dark:bg-slate-900 border-slate-100 dark:border-white/5 text-slate-600 dark:text-slate-300 hover:border-accent dark:hover:border-accent hover:text-accent"
               )}
             >
               {table.split('_').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
@@ -224,10 +224,10 @@ export default function DashboardPage() {
       <div className="bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-[32px] overflow-hidden p-8 shadow-sm">
         <div className="mb-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
-            <h2 className="text-xl font-black text-black dark:text-white uppercase tracking-tight">
-              Inspection Data: <span className="text-accent">{selectedTable.split('_').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}</span>
+            <h2 className="text-2xl font-black text-slate-900 dark:text-white uppercase tracking-tight">
+              Inspection Data: <span className="text-accent underline decoration-accent/20 underline-offset-8">{selectedTable.split('_').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}</span>
             </h2>
-            <p className="text-sm text-slate-500 mt-1">Reviewing requirements and responses for {currentVessel?.vessel_name || currentVessel?.vesselName || 'Loading...'}</p>
+            <p className="text-sm text-slate-600 dark:text-slate-300 mt-4 font-bold">Reviewing requirements and responses for {currentVessel?.vessel_name || currentVessel?.vesselName || 'Loading...'}</p>
           </div>
 
           
