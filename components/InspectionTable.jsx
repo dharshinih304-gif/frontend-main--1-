@@ -3,6 +3,7 @@ import { getTableData, updateTableRow } from '../services/api'
 import { motion } from 'framer-motion'
 import { FileText, Loader2, AlertCircle, Check, Save } from 'lucide-react'
 import { useAuth } from '../hooks/use-auth'
+import { cn } from '../lib/utils'
 
 function InspectionTable({ tableName, vesselId, vesselName }) {
     const { user } = useAuth()
