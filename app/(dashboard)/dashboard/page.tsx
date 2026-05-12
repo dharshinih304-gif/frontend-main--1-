@@ -146,7 +146,7 @@ export default function DashboardPage() {
     <div className="space-y-8 pb-12 print:p-0 print:m-0">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 print:hidden">
         <div>
-          <h1 className="text-3xl font-black tracking-tight text-slate-900 dark:text-white uppercase leading-none">Vessel Inspection System</h1>
+          <h1 className="text-3xl font-black tracking-tight text-slate-900 dark:text-slate-100 uppercase leading-tight">Vessel Inspection System</h1>
           <p className="text-slate-600 dark:text-slate-300 mt-2 font-bold tracking-tight">Welcome back, {user?.name} ({user?.role})</p>
         </div>
         <div className="flex gap-2">

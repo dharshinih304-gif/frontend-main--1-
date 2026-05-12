@@ -79,7 +79,7 @@ function InspectionTable({ tableName, vesselId, vesselName }) {
                         <FileText className="w-6 h-6" />
                     </div>
                     <div>
-                        <h2 className="text-xl font-black tracking-tight text-slate-900 dark:text-white uppercase leading-none">{formatHeader(tableName)}</h2>
+                        <h2 className="text-xl font-black tracking-tight text-slate-900 dark:text-slate-100 uppercase leading-tight">{formatHeader(tableName)}</h2>
                         <p className="text-[10px] font-black text-slate-600 dark:text-slate-400 uppercase tracking-[0.2em] mt-2">
                             Active Vessel: <span className="text-accent">{vesselName || 'Loading...'}</span>
                         </p>
