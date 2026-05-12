@@ -91,7 +91,7 @@ export default function AdminPage() {
     <div className="space-y-10">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
-          <h1 className="text-4xl font-black tracking-tight text-slate-900 dark:text-slate-100 uppercase leading-tight">Admin Control Panel</h1>
+          <h1 className="text-4xl font-black tracking-tight text-foreground uppercase leading-tight">Admin Control Panel</h1>
           <p className="text-slate-600 dark:text-slate-300 mt-3 font-bold tracking-tight">Manage global system access, permissions, and security protocols.</p>
         </div>
         <div className="flex items-center gap-3">

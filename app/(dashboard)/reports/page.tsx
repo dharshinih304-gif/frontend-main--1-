@@ -94,7 +94,7 @@ export default function ReportsPage() {
     <div className="space-y-8">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
-          <h1 className="text-3xl font-black tracking-tight text-slate-900 dark:text-slate-100 uppercase leading-tight">Inspection Reports</h1>
+          <h1 className="text-3xl font-black tracking-tight text-foreground uppercase leading-tight">Inspection Reports</h1>
           <p className="text-slate-600 dark:text-slate-300 mt-2 font-bold tracking-tight">Manage and audit finalized vessel inspection logs from Supabase.</p>
         </div>
         <button 

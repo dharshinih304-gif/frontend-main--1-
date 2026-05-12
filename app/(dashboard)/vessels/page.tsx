@@ -82,7 +82,7 @@ export default function VesselsPage() {
       {/* Simplified Header with Vessel Selector */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-3xl p-8 shadow-sm">
         <div className="space-y-1">
-          <h1 className="text-3xl font-black tracking-tight text-slate-900 dark:text-slate-100 uppercase leading-tight">Inspection Categories</h1>
+          <h1 className="text-3xl font-black tracking-tight text-foreground uppercase leading-tight">Inspection Categories</h1>
           <p className="text-slate-600 dark:text-slate-300 mt-2 font-bold tracking-tight">Manage 51 inspection categories for the selected vessel</p>
         </div>
 

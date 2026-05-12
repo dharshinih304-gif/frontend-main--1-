@@ -62,7 +62,7 @@ export default function UserManagementPage() {
     <div className="space-y-6">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-black tracking-tight text-slate-900 dark:text-slate-100 uppercase leading-tight">User Management</h1>
+          <h1 className="text-3xl font-black tracking-tight text-foreground uppercase leading-tight">User Management</h1>
           <p className="text-slate-600 dark:text-slate-300 mt-1 font-medium tracking-tight">Manage system access and roles.</p>
         </div>
         <button 
