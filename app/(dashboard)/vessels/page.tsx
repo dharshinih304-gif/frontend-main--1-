@@ -80,7 +80,7 @@ export default function VesselsPage() {
   return (
     <div className="space-y-8 pb-24">
       {/* Simplified Header with Vessel Selector */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-3xl p-8 shadow-sm">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 bg-card border border-slate-200 dark:border-white/10 rounded-3xl p-8 shadow-sm">
         <div className="space-y-1">
           <h1 className="text-3xl font-black tracking-tight text-foreground uppercase leading-tight">Inspection Categories</h1>
           <p className="text-slate-600 dark:text-slate-300 mt-2 font-bold tracking-tight">Manage 51 inspection categories for the selected vessel</p>
@@ -106,7 +106,7 @@ export default function VesselsPage() {
             whileHover={{ y: -8, scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             onClick={() => handleCategoryClick(table)}
-            className="group relative p-8 bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-white/10 rounded-[32px] text-left transition-all hover:shadow-2xl hover:shadow-accent/20 hover:border-accent shadow-xl shadow-slate-200/20 dark:shadow-none"
+            className="group relative p-8 bg-card border border-slate-200 dark:border-white/10 rounded-[32px] text-left transition-all hover:shadow-2xl hover:shadow-accent/20 hover:border-accent shadow-xl shadow-slate-200/20 dark:shadow-none"
           >
             <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 bg-slate-50 dark:bg-slate-900 group-hover:bg-accent group-hover:text-white transition-all shadow-inner group-hover:shadow-accent/20 group-hover:rotate-6">
               <FileText className="w-7 h-7" />
