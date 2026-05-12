@@ -49,13 +49,13 @@ export default function InspectPage() {
             <ArrowLeft className="w-6 h-6" />
           </button>
           <div>
-            <h1 className="text-3xl font-black tracking-tight text-black dark:text-white uppercase flex items-center gap-3">
+            <h1 className="text-3xl font-black tracking-tight text-slate-900 dark:text-white uppercase flex items-center gap-3">
               <div className="p-2 bg-accent/10 rounded-xl">
                 <CheckCircle2 className="w-6 h-6 text-accent" />
               </div>
               {category.split('_').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
             </h1>
-            <p className="text-slate-500 mt-1">Detailed report for vessel: {vessel?.vessel_name || vessel?.vesselName || vessel?.name || 'Loading...'}</p>
+            <p className="text-slate-600 dark:text-slate-300 mt-1 font-bold">Detailed report for vessel: {vessel?.vessel_name || vessel?.vesselName || vessel?.name || 'Loading...'}</p>
           </div>
         </div>
 

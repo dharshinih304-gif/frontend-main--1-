@@ -94,8 +94,8 @@ export default function ReportsPage() {
     <div className="space-y-8">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
-          <h1 className="text-3xl font-black tracking-tight text-black dark:text-white uppercase">Inspection Reports</h1>
-          <p className="text-slate-500 mt-1">Manage and audit finalized vessel inspection logs from Supabase.</p>
+          <h1 className="text-3xl font-black tracking-tight text-slate-900 dark:text-white uppercase">Inspection Reports</h1>
+          <p className="text-slate-600 dark:text-slate-300 mt-1 font-bold tracking-tight">Manage and audit finalized vessel inspection logs from Supabase.</p>
         </div>
         <button 
           onClick={() => router.push('/vessels')}
@@ -114,8 +114,8 @@ export default function ReportsPage() {
               <CheckCircle className="w-6 h-6" />
             </div>
             <div>
-              <p className="text-[10px] font-black text-emerald-600 uppercase tracking-widest">Approved</p>
-              <p className="text-2xl font-black text-black dark:text-white">
+              <p className="text-[10px] font-black text-emerald-700 dark:text-emerald-400 uppercase tracking-widest">Approved</p>
+              <p className="text-2xl font-black text-slate-900 dark:text-white">
                 {reports.filter(r => r.status === 'APPROVED').length}
               </p>
             </div>
@@ -127,8 +127,8 @@ export default function ReportsPage() {
               <AlertCircle className="w-6 h-6" />
             </div>
             <div>
-              <p className="text-[10px] font-black text-orange-600 uppercase tracking-widest">Pending</p>
-              <p className="text-2xl font-black text-black dark:text-white">
+              <p className="text-[10px] font-black text-orange-700 dark:text-orange-400 uppercase tracking-widest">Pending</p>
+              <p className="text-2xl font-black text-slate-900 dark:text-white">
                 {reports.filter(r => r.status === 'PENDING').length}
               </p>
             </div>
@@ -140,8 +140,8 @@ export default function ReportsPage() {
               <XCircle className="w-6 h-6" />
             </div>
             <div>
-              <p className="text-[10px] font-black text-red-600 uppercase tracking-widest">Rejected</p>
-              <p className="text-2xl font-black text-black dark:text-white">
+              <p className="text-[10px] font-black text-red-700 dark:text-red-400 uppercase tracking-widest">Rejected</p>
+              <p className="text-2xl font-black text-slate-900 dark:text-white">
                 {reports.filter(r => r.status === 'REJECTED').length}
               </p>
             </div>
@@ -160,7 +160,7 @@ export default function ReportsPage() {
                 "flex-1 lg:flex-none px-6 py-2.5 rounded-xl text-xs font-black transition-all uppercase tracking-widest",
                 activeTab === tab 
                   ? "bg-white dark:bg-accent text-accent dark:text-white shadow-md shadow-accent/10" 
-                  : "text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"
+                  : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
               )}
             >
               {tab}
@@ -194,12 +194,12 @@ export default function ReportsPage() {
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse">
             <thead>
-              <tr className="bg-slate-50/50 dark:bg-white/5 border-b border-slate-200 dark:border-white/10">
-                <th className="px-8 py-5 font-black text-black dark:text-slate-400 text-[10px] uppercase tracking-[0.2em]">Reference / Vessel</th>
-                <th className="px-8 py-5 font-black text-black dark:text-slate-400 text-[10px] uppercase tracking-[0.2em]">Category</th>
-                <th className="px-8 py-5 font-black text-black dark:text-slate-400 text-[10px] uppercase tracking-[0.2em]">Date</th>
-                <th className="px-8 py-5 font-black text-black dark:text-slate-400 text-[10px] uppercase tracking-[0.2em]">Status</th>
-                <th className="px-8 py-5 font-black text-black dark:text-slate-400 text-[10px] uppercase tracking-[0.2em] text-right">Actions</th>
+              <tr className="bg-slate-100/50 dark:bg-white/10 border-b border-slate-200 dark:border-white/10">
+                <th className="px-8 py-5 font-black text-slate-900 dark:text-slate-200 text-[10px] uppercase tracking-[0.2em]">Reference / Vessel</th>
+                <th className="px-8 py-5 font-black text-slate-900 dark:text-slate-200 text-[10px] uppercase tracking-[0.2em]">Category</th>
+                <th className="px-8 py-5 font-black text-slate-900 dark:text-slate-200 text-[10px] uppercase tracking-[0.2em]">Date</th>
+                <th className="px-8 py-5 font-black text-slate-900 dark:text-slate-200 text-[10px] uppercase tracking-[0.2em]">Status</th>
+                <th className="px-8 py-5 font-black text-slate-900 dark:text-slate-200 text-[10px] uppercase tracking-[0.2em] text-right">Actions</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100 dark:divide-white/5">
@@ -217,11 +217,11 @@ export default function ReportsPage() {
                     </div>
                   </td>
                   <td className="px-8 py-5">
-                    <span className="text-sm font-black text-slate-600 dark:text-slate-300 uppercase tracking-tighter">
+                    <span className="text-sm font-black text-slate-800 dark:text-slate-200 uppercase tracking-tighter">
                       {report.category?.split('_').join(' ') || 'General'}
                     </span>
                   </td>
-                  <td className="px-8 py-5 text-sm font-bold text-slate-500">
+                  <td className="px-8 py-5 text-sm font-black text-slate-700 dark:text-slate-300">
                     {new Date(report.inspectionDate).toLocaleDateString(undefined, { dateStyle: 'medium' })}
                   </td>
                   <td className="px-8 py-5">

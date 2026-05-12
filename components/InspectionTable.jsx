@@ -78,8 +78,8 @@ function InspectionTable({ tableName, vesselId, vesselName }) {
                         <FileText className="w-5 h-5 text-blue-500" />
                     </div>
                     <div>
-                        <h2 className="text-xl font-bold tracking-tight">{formatHeader(tableName)}</h2>
-                        <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-0.5">
+                        <h2 className="text-xl font-black tracking-tight text-slate-900 dark:text-white uppercase">{formatHeader(tableName)}</h2>
+                        <p className="text-[10px] font-black text-slate-600 dark:text-slate-300 uppercase tracking-widest mt-0.5">
                             Active Vessel: <span className="text-accent">{vesselName || 'Loading...'}</span>
                         </p>
                     </div>
@@ -116,26 +116,26 @@ function InspectionTable({ tableName, vesselId, vesselName }) {
                 <div className="overflow-x-auto -mx-6 px-6">
                     <table className="w-full text-left border-collapse">
                         <thead>
-                            <tr className="border-b border-slate-100 dark:border-white/5">
-                                <th className="pb-4 font-semibold text-slate-500 text-xs uppercase tracking-wider w-16">S.No</th>
-                                <th className="pb-4 font-semibold text-slate-500 text-xs uppercase tracking-wider">Rule Ref</th>
-                                <th className="pb-4 font-semibold text-slate-500 text-xs uppercase tracking-wider">Requirements</th>
-                                <th className="pb-4 font-semibold text-slate-500 text-xs uppercase tracking-wider text-center w-32">Ans</th>
-                                <th className="pb-4 font-semibold text-slate-500 text-xs uppercase tracking-wider">Comments</th>
-                                <th className="pb-4 font-semibold text-slate-500 text-xs uppercase tracking-wider text-right w-24">Action</th>
+                            <tr className="border-b-2 border-slate-200 dark:border-white/20 bg-slate-100/50 dark:bg-white/5">
+                                <th className="px-4 py-4 font-black text-slate-900 dark:text-slate-200 text-[10px] uppercase tracking-widest w-16">S.No</th>
+                                <th className="px-4 py-4 font-black text-slate-900 dark:text-slate-200 text-[10px] uppercase tracking-widest">Rule Ref</th>
+                                <th className="px-4 py-4 font-black text-slate-900 dark:text-slate-200 text-[10px] uppercase tracking-widest">Requirements</th>
+                                <th className="px-4 py-4 font-black text-slate-900 dark:text-slate-200 text-[10px] uppercase tracking-widest text-center w-32">Ans</th>
+                                <th className="px-4 py-4 font-black text-slate-900 dark:text-slate-200 text-[10px] uppercase tracking-widest">Comments</th>
+                                <th className="px-4 py-4 font-black text-slate-900 dark:text-slate-200 text-[10px] uppercase tracking-widest text-right w-24">Action</th>
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-slate-100 dark:divide-white/5">
                             {rows.map((item, index) => (
                                 <tr key={item.id || index} className="group hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
-                                    <td className="py-4 text-sm font-bold text-slate-900 dark:text-white pr-12 whitespace-nowrap">
+                                    <td className="px-4 py-4 text-sm font-black text-slate-900 dark:text-white whitespace-nowrap">
                                         {item.s_no || index + 1}
                                     </td>
-                                    <td className="py-4 text-[10px] font-mono text-slate-900 dark:text-white font-bold uppercase tracking-tight pr-12">
+                                    <td className="px-4 py-4 text-[10px] font-mono text-slate-900 dark:text-white font-black uppercase tracking-tight">
                                         {item.rule_ref || '-'}
                                     </td>
-                                    <td className="py-4 text-sm leading-relaxed pr-8">
-                                        <div className="font-bold text-slate-900 dark:text-white">{item.requirements}</div>
+                                    <td className="px-4 py-4 text-sm leading-relaxed">
+                                        <div className="font-black text-slate-900 dark:text-white">{item.requirements}</div>
                                     </td>
                                     <td className="py-4">
                                         {isEditable ? (
@@ -160,17 +160,17 @@ function InspectionTable({ tableName, vesselId, vesselName }) {
                                             </div>
                                         )}
                                     </td>
-                                    <td className="py-4">
+                                    <td className="px-4 py-4">
                                         {isEditable ? (
                                             <input 
                                                 type="text"
                                                 value={editData[item.id]?.comments || ''}
                                                 onChange={(e) => handleInputChange(item.id, 'comments', e.target.value)}
                                                 placeholder="Add comment..."
-                                                className="w-full bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-lg px-3 py-1.5 text-xs outline-none focus:ring-2 ring-accent"
+                                                className="w-full bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-lg px-3 py-1.5 text-xs font-bold outline-none focus:ring-2 ring-accent"
                                             />
                                         ) : (
-                                            <span className="text-sm text-slate-700 dark:text-slate-300 font-medium">{item.comments || '-'}</span>
+                                            <span className="text-sm text-slate-900 dark:text-slate-100 font-black">{item.comments || '-'}</span>
                                         )}
                                     </td>
                                     <td className="py-4 text-right">

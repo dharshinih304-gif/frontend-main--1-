@@ -62,8 +62,8 @@ export default function UserManagementPage() {
     <div className="space-y-6">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">User Management</h1>
-          <p className="text-slate-500 mt-1">Manage system access and roles.</p>
+          <h1 className="text-3xl font-black tracking-tight text-slate-900 dark:text-white uppercase">User Management</h1>
+          <p className="text-slate-600 dark:text-slate-300 mt-1 font-medium tracking-tight">Manage system access and roles.</p>
         </div>
         <button 
           onClick={() => setIsModalOpen(true)}
@@ -160,21 +160,21 @@ export default function UserManagementPage() {
 
         <div className="overflow-x-auto">
           <table className="w-full text-left">
-            <thead className="bg-slate-50 dark:bg-white/5">
+            <thead className="bg-slate-100/80 dark:bg-white/10">
               <tr>
-                <th className="px-6 py-3 text-[10px] font-bold text-slate-500 uppercase tracking-widest">Name</th>
-                <th className="px-6 py-3 text-[10px] font-bold text-slate-500 uppercase tracking-widest">Email</th>
-                <th className="px-6 py-3 text-[10px] font-bold text-slate-500 uppercase tracking-widest">Role</th>
-                <th className="px-6 py-3 text-[10px] font-bold text-slate-500 uppercase tracking-widest text-right">Action</th>
+                <th className="px-6 py-4 text-[10px] font-black text-slate-900 dark:text-slate-200 uppercase tracking-[0.2em]">Name</th>
+                <th className="px-6 py-4 text-[10px] font-black text-slate-900 dark:text-slate-200 uppercase tracking-[0.2em]">Email</th>
+                <th className="px-6 py-4 text-[10px] font-black text-slate-900 dark:text-slate-200 uppercase tracking-[0.2em]">Role</th>
+                <th className="px-6 py-4 text-[10px] font-black text-slate-900 dark:text-slate-200 uppercase tracking-[0.2em] text-right">Action</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100 dark:divide-white/5">
               {users.map((u) => (
                 <tr key={u.id} className="hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
                   <td className="px-6 py-4">
-                    <p className="text-sm font-bold">{u.name}</p>
+                    <p className="text-sm font-black text-slate-900 dark:text-white uppercase tracking-tight">{u.name}</p>
                   </td>
-                  <td className="px-6 py-4 text-sm font-medium text-slate-900 dark:text-slate-100">
+                  <td className="px-6 py-4 text-sm font-bold text-slate-700 dark:text-slate-300">
                     {u.email}
                   </td>
                   <td className="px-6 py-4">

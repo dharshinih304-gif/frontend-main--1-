@@ -91,8 +91,8 @@ export default function AdminPage() {
     <div className="space-y-10">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
-          <h1 className="text-4xl font-black tracking-tight text-black dark:text-white uppercase">Admin Control Panel</h1>
-          <p className="text-slate-500 mt-2 font-medium">Manage global system access, permissions, and security protocols.</p>
+          <h1 className="text-4xl font-black tracking-tight text-slate-900 dark:text-white uppercase">Admin Control Panel</h1>
+          <p className="text-slate-600 dark:text-slate-300 mt-2 font-bold tracking-tight">Manage global system access, permissions, and security protocols.</p>
         </div>
         <div className="flex items-center gap-3">
           <div className="px-4 py-2 bg-emerald-500/10 text-emerald-600 rounded-2xl text-xs font-black flex items-center gap-2 border border-emerald-500/20">
@@ -112,8 +112,8 @@ export default function AdminPage() {
                   <Users className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="font-black text-lg uppercase tracking-tight text-black dark:text-white">System Users</h3>
-                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{systemUsers.length} TOTAL ACCOUNTS</p>
+                  <h3 className="font-black text-lg uppercase tracking-tight text-slate-900 dark:text-white">System Users</h3>
+                  <p className="text-[10px] font-black text-slate-600 dark:text-slate-300 uppercase tracking-widest">{systemUsers.length} TOTAL ACCOUNTS</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
@@ -137,11 +137,11 @@ export default function AdminPage() {
             <div className="overflow-x-auto">
               <table className="w-full text-left">
                 <thead>
-                  <tr className="bg-white dark:bg-transparent">
-                    <th className="px-8 py-5 text-[10px] font-black text-black dark:text-slate-400 uppercase tracking-[0.2em]">Full Identity</th>
-                    <th className="px-8 py-5 text-[10px] font-black text-black dark:text-slate-400 uppercase tracking-[0.2em]">Privilege Level</th>
-                    <th className="px-8 py-5 text-[10px] font-black text-black dark:text-slate-400 uppercase tracking-[0.2em]">Operational Status</th>
-                    <th className="px-8 py-5 text-[10px] font-black text-black dark:text-slate-400 uppercase tracking-[0.2em] text-right">Actions</th>
+                  <tr className="bg-slate-100/50 dark:bg-white/10">
+                    <th className="px-8 py-5 text-[10px] font-black text-slate-900 dark:text-slate-200 uppercase tracking-[0.2em]">Full Identity</th>
+                    <th className="px-8 py-5 text-[10px] font-black text-slate-900 dark:text-slate-200 uppercase tracking-[0.2em]">Privilege Level</th>
+                    <th className="px-8 py-5 text-[10px] font-black text-slate-900 dark:text-slate-200 uppercase tracking-[0.2em]">Operational Status</th>
+                    <th className="px-8 py-5 text-[10px] font-black text-slate-900 dark:text-slate-200 uppercase tracking-[0.2em] text-right">Actions</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100 dark:divide-white/5">
@@ -161,10 +161,10 @@ export default function AdminPage() {
                               {u.name?.charAt(0)}
                             </div>
                             <div>
-                               <p className="text-sm font-bold text-black dark:text-white uppercase tracking-tight">{u.name}</p>
-                              <div className="flex items-center gap-1.5 text-slate-400">
+                             <p className="text-sm font-black text-slate-900 dark:text-white uppercase tracking-tight">{u.name}</p>
+                              <div className="flex items-center gap-1.5 text-slate-600 dark:text-slate-300">
                                 <Mail className="w-3 h-3" />
-                                <span className="text-[11px] font-bold">{u.email}</span>
+                                <span className="text-[11px] font-black">{u.email}</span>
                               </div>
                             </div>
                           </div>
@@ -213,7 +213,7 @@ export default function AdminPage() {
         {/* Sidebar Settings Section */}
         <div className="space-y-8">
           <div className="bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-[32px] p-8 shadow-xl shadow-slate-200/10 dark:shadow-none">
-            <h3 className="font-black text-sm uppercase tracking-[0.2em] text-slate-400 mb-8">Security Policies</h3>
+            <h3 className="font-black text-sm uppercase tracking-[0.2em] text-slate-900 dark:text-slate-200 mb-8">Security Policies</h3>
             <div className="space-y-6">
               {policies.map((policy) => (
                 <div key={policy.id} className="flex items-center justify-between">
