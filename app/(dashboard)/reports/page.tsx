@@ -94,7 +94,7 @@ export default function ReportsPage() {
     <div className="space-y-8">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Inspection Reports</h1>
+          <h1 className="text-3xl font-black tracking-tight text-black dark:text-white uppercase">Inspection Reports</h1>
           <p className="text-slate-500 mt-1">Manage and audit finalized vessel inspection logs from Supabase.</p>
         </div>
         <button 
@@ -115,7 +115,7 @@ export default function ReportsPage() {
             </div>
             <div>
               <p className="text-[10px] font-black text-emerald-600 uppercase tracking-widest">Approved</p>
-              <p className="text-2xl font-bold text-slate-900 dark:text-white">
+              <p className="text-2xl font-black text-black dark:text-white">
                 {reports.filter(r => r.status === 'APPROVED').length}
               </p>
             </div>
@@ -128,7 +128,7 @@ export default function ReportsPage() {
             </div>
             <div>
               <p className="text-[10px] font-black text-orange-600 uppercase tracking-widest">Pending</p>
-              <p className="text-2xl font-bold text-slate-900 dark:text-white">
+              <p className="text-2xl font-black text-black dark:text-white">
                 {reports.filter(r => r.status === 'PENDING').length}
               </p>
             </div>
@@ -141,7 +141,7 @@ export default function ReportsPage() {
             </div>
             <div>
               <p className="text-[10px] font-black text-red-600 uppercase tracking-widest">Rejected</p>
-              <p className="text-2xl font-bold text-slate-900 dark:text-white">
+              <p className="text-2xl font-black text-black dark:text-white">
                 {reports.filter(r => r.status === 'REJECTED').length}
               </p>
             </div>
@@ -195,11 +195,11 @@ export default function ReportsPage() {
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="bg-slate-50/50 dark:bg-white/5 border-b border-slate-200 dark:border-white/10">
-                <th className="px-8 py-5 font-black text-slate-400 text-[10px] uppercase tracking-[0.2em]">Reference / Vessel</th>
-                <th className="px-8 py-5 font-black text-slate-400 text-[10px] uppercase tracking-[0.2em]">Category</th>
-                <th className="px-8 py-5 font-black text-slate-400 text-[10px] uppercase tracking-[0.2em]">Date</th>
-                <th className="px-8 py-5 font-black text-slate-400 text-[10px] uppercase tracking-[0.2em]">Status</th>
-                <th className="px-8 py-5 font-black text-slate-400 text-[10px] uppercase tracking-[0.2em] text-right">Actions</th>
+                <th className="px-8 py-5 font-black text-black dark:text-slate-400 text-[10px] uppercase tracking-[0.2em]">Reference / Vessel</th>
+                <th className="px-8 py-5 font-black text-black dark:text-slate-400 text-[10px] uppercase tracking-[0.2em]">Category</th>
+                <th className="px-8 py-5 font-black text-black dark:text-slate-400 text-[10px] uppercase tracking-[0.2em]">Date</th>
+                <th className="px-8 py-5 font-black text-black dark:text-slate-400 text-[10px] uppercase tracking-[0.2em]">Status</th>
+                <th className="px-8 py-5 font-black text-black dark:text-slate-400 text-[10px] uppercase tracking-[0.2em] text-right">Actions</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100 dark:divide-white/5">
@@ -211,7 +211,7 @@ export default function ReportsPage() {
                         <Ship className="w-5 h-5" />
                       </div>
                       <div>
-                        <p className="font-black text-sm text-slate-900 dark:text-white uppercase tracking-tight">#{report.id.toString().slice(-6)}</p>
+                        <p className="font-black text-sm text-black dark:text-white uppercase tracking-tight">#{report.id.toString().slice(-6)}</p>
                         <p className="text-xs text-slate-500 font-bold">{report.vessel?.vesselName || 'Unassigned Vessel'}</p>
                       </div>
                     </div>

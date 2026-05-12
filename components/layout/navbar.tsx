@@ -33,7 +33,7 @@ export function Navbar({ toggleSidebar }: { toggleSidebar: () => void }) {
           onClick={toggleSidebar}
           className="p-2 hover:bg-slate-100 dark:hover:bg-white/5 rounded-lg transition-colors"
         >
-          <Menu className="w-5 h-5" />
+          <Menu className="w-5 h-5 text-slate-700 dark:text-slate-300" />
         </button>
         <div className="relative hidden md:block w-64">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
@@ -54,7 +54,7 @@ export function Navbar({ toggleSidebar }: { toggleSidebar: () => void }) {
         </button>
         
         <button className="p-2 hover:bg-slate-100 dark:hover:bg-white/5 rounded-lg transition-colors relative">
-          <Bell className="w-5 h-5" />
+          <Bell className="w-5 h-5 text-slate-700 dark:text-slate-300" />
           <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full border-2 border-white dark:border-maritime-dark" />
         </button>
 
@@ -66,7 +66,7 @@ export function Navbar({ toggleSidebar }: { toggleSidebar: () => void }) {
             <p className="text-[10px] text-slate-500 mt-1 font-bold uppercase tracking-wider">{user?.role || 'User'}</p>
           </div>
           
-          <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-accent to-blue-400 flex items-center justify-center text-white font-bold border-2 border-white dark:border-maritime-dark shadow-sm">
+          <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-accent to-blue-400 flex items-center justify-center text-white font-bold border-2 border-slate-200 dark:border-maritime-dark shadow-sm">
             {user?.name?.charAt(0) || <UserIcon className="w-5 h-5" />}
           </div>
 

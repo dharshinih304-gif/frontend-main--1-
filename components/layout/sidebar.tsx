@@ -39,12 +39,12 @@ export function Sidebar({ isOpen, toggle }: { isOpen: boolean, toggle: () => voi
       "fixed inset-y-0 left-0 z-50 sidebar-glass transition-all duration-300 ease-in-out lg:static lg:block",
       isOpen ? "w-64" : "w-0 lg:w-20 -translate-x-full lg:translate-x-0"
     )}>
-      <div className="flex flex-col h-full text-white">
+      <div className="flex flex-col h-full text-slate-900 dark:text-white">
         {/* Brand */}
         <div className="h-16 flex items-center justify-between px-6 border-b border-white/5">
           <div className={cn("flex items-center gap-3", !isOpen && "lg:hidden")}>
             <Ship className="w-8 h-8 text-accent" />
-            <span className="font-bold text-lg tracking-tight">SELLAMSOFT</span>
+            <span className="font-bold text-lg tracking-tight text-slate-900 dark:text-white">SELLAMSOFT</span>
           </div>
           <button onClick={toggle} className="lg:hidden">
             <ChevronLeft className="w-6 h-6" />
@@ -64,7 +64,7 @@ export function Sidebar({ isOpen, toggle }: { isOpen: boolean, toggle: () => voi
                   "flex items-center gap-3 px-4 py-3 rounded-xl transition-all group",
                   isActive 
                     ? "bg-accent text-white shadow-lg shadow-accent/20" 
-                    : "text-slate-400 hover:bg-white/5 hover:text-white"
+                    : "text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-white/5 hover:text-slate-900 dark:hover:text-white"
                 )}
               >
                 <item.icon className={cn("w-5 h-5", isActive ? "text-white" : "group-hover:text-accent")} />
@@ -80,7 +80,7 @@ export function Sidebar({ isOpen, toggle }: { isOpen: boolean, toggle: () => voi
         </nav>
 
         {/* Footer */}
-        <div className="p-4 border-t border-white/5">
+        <div className="p-4 border-t border-slate-200 dark:border-white/5">
           <button 
             onClick={() => {
               console.log('Sidebar Logout Clicked');

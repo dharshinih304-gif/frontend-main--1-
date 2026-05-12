@@ -82,7 +82,7 @@ export default function VesselsPage() {
       {/* Simplified Header with Vessel Selector */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-3xl p-8 shadow-sm">
         <div className="space-y-1">
-          <h1 className="text-3xl font-bold tracking-tight">Inspection Categories</h1>
+          <h1 className="text-3xl font-black tracking-tight text-black dark:text-white uppercase">Inspection Categories</h1>
           <p className="text-slate-500">Manage 51 inspection categories for the selected vessel</p>
         </div>
 
@@ -112,7 +112,7 @@ export default function VesselsPage() {
               <FileText className="w-6 h-6" />
             </div>
             
-            <h3 className="text-xs font-black uppercase tracking-tight leading-tight text-slate-900 dark:text-white group-hover:text-accent transition-colors break-words">
+            <h3 className="text-xs font-black uppercase tracking-tight leading-tight text-black dark:text-white group-hover:text-accent transition-colors break-words">
               {table.split('_').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
             </h3>
 

@@ -128,14 +128,14 @@ function InspectionTable({ tableName, vesselId, vesselName }) {
                         <tbody className="divide-y divide-slate-100 dark:divide-white/5">
                             {rows.map((item, index) => (
                                 <tr key={item.id || index} className="group hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
-                                    <td className="py-4 text-sm font-bold text-slate-900 dark:text-slate-200 pr-12 whitespace-nowrap">
+                                    <td className="py-4 text-sm font-bold text-slate-900 dark:text-white pr-12 whitespace-nowrap">
                                         {item.s_no || index + 1}
                                     </td>
-                                    <td className="py-4 text-[10px] font-mono text-slate-900 dark:text-slate-200 font-bold uppercase tracking-tight pr-12">
+                                    <td className="py-4 text-[10px] font-mono text-slate-900 dark:text-white font-bold uppercase tracking-tight pr-12">
                                         {item.rule_ref || '-'}
                                     </td>
                                     <td className="py-4 text-sm leading-relaxed pr-8">
-                                        <div className="font-medium text-slate-900 dark:text-slate-100">{item.requirements}</div>
+                                        <div className="font-bold text-slate-900 dark:text-white">{item.requirements}</div>
                                     </td>
                                     <td className="py-4">
                                         {isEditable ? (
@@ -170,7 +170,7 @@ function InspectionTable({ tableName, vesselId, vesselName }) {
                                                 className="w-full bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-lg px-3 py-1.5 text-xs outline-none focus:ring-2 ring-accent"
                                             />
                                         ) : (
-                                            <span className="text-sm text-slate-500">{item.comments || '-'}</span>
+                                            <span className="text-sm text-slate-700 dark:text-slate-300 font-medium">{item.comments || '-'}</span>
                                         )}
                                     </td>
                                     <td className="py-4 text-right">

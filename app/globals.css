@@ -33,7 +33,7 @@
 
 :root {
   --background: #f8fafc;
-  --foreground: #0f172a;
+  --foreground: #000000;
   --card: #ffffff;
   --card-foreground: #0f172a;
   --popover: #ffffff;
@@ -92,7 +92,7 @@
 }
 
 .sidebar-glass {
-  @apply bg-maritime-dark/95 dark:bg-black/95 backdrop-blur-lg border-r border-white/5;
+  @apply bg-white/95 dark:bg-black/95 backdrop-blur-lg border-r border-slate-200 dark:border-white/5;
 }
 
 .nav-glass {

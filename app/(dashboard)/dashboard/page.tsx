@@ -146,7 +146,7 @@ export default function DashboardPage() {
     <div className="space-y-8 pb-12 print:p-0 print:m-0">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 print:hidden">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Vessel Inspection System</h1>
+          <h1 className="text-3xl font-black tracking-tight text-black dark:text-white uppercase">Vessel Inspection System</h1>
           <p className="text-slate-500 mt-1">Welcome back, {user?.name} ({user?.role})</p>
         </div>
         <div className="flex gap-2">
@@ -183,7 +183,7 @@ export default function DashboardPage() {
               </div>
               <div>
                 <p className="text-slate-500 text-[10px] font-bold uppercase tracking-wider">{stat.label}</p>
-                <h3 className="text-xl font-bold mt-0.5">{stat.value}</h3>
+                <h3 className="text-xl font-black mt-0.5 text-black dark:text-white">{stat.value}</h3>
               </div>
             </div>
           </motion.div>
@@ -193,7 +193,7 @@ export default function DashboardPage() {
       {/* 51 Categories Grid Section on Dashboard */}
       <div className="bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-3xl p-6 shadow-sm">
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-sm font-bold flex items-center gap-2 text-slate-800 dark:text-white uppercase tracking-wider">
+          <h2 className="text-sm font-black flex items-center gap-2 text-black dark:text-white uppercase tracking-wider">
             <div className="p-1.5 bg-accent/10 rounded-lg text-accent">
               <CheckCircle2 className="w-4 h-4" />
             </div>
@@ -224,7 +224,7 @@ export default function DashboardPage() {
       <div className="bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-[32px] overflow-hidden p-8 shadow-sm">
         <div className="mb-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
-            <h2 className="text-xl font-bold text-slate-900 dark:text-white">
+            <h2 className="text-xl font-black text-black dark:text-white uppercase tracking-tight">
               Inspection Data: <span className="text-accent">{selectedTable.split('_').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}</span>
             </h2>
             <p className="text-sm text-slate-500 mt-1">Reviewing requirements and responses for {currentVessel?.vessel_name || currentVessel?.vesselName || 'Loading...'}</p>
@@ -239,7 +239,7 @@ export default function DashboardPage() {
             <select 
               value={selectedVessel || ''}
               onChange={(e) => setSelectedVessel(e.target.value)}
-              className="bg-white dark:bg-slate-800 border-none rounded-xl px-4 py-2 text-xs font-bold outline-none ring-1 ring-slate-200 dark:ring-white/10 focus:ring-2 ring-accent transition-all min-w-[180px] cursor-pointer"
+              className="bg-white dark:bg-slate-800 border-none rounded-xl px-4 py-2 text-xs font-black text-black dark:text-white outline-none ring-1 ring-slate-200 dark:ring-white/10 focus:ring-2 ring-accent transition-all min-w-[180px] cursor-pointer"
             >
               {vessels.map(v => (
                 <option key={v.id} value={v.id}>{v.vessel_name || v.vesselName || v.name}</option>

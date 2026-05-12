@@ -91,7 +91,7 @@ export default function AdminPage() {
     <div className="space-y-10">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
-          <h1 className="text-4xl font-black tracking-tight text-slate-900 dark:text-white uppercase">Admin Control Panel</h1>
+          <h1 className="text-4xl font-black tracking-tight text-black dark:text-white uppercase">Admin Control Panel</h1>
           <p className="text-slate-500 mt-2 font-medium">Manage global system access, permissions, and security protocols.</p>
         </div>
         <div className="flex items-center gap-3">
@@ -112,7 +112,7 @@ export default function AdminPage() {
                   <Users className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="font-black text-lg uppercase tracking-tight text-slate-900 dark:text-white">System Users</h3>
+                  <h3 className="font-black text-lg uppercase tracking-tight text-black dark:text-white">System Users</h3>
                   <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{systemUsers.length} TOTAL ACCOUNTS</p>
                 </div>
               </div>
@@ -138,10 +138,10 @@ export default function AdminPage() {
               <table className="w-full text-left">
                 <thead>
                   <tr className="bg-white dark:bg-transparent">
-                    <th className="px-8 py-5 text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">Full Identity</th>
-                    <th className="px-8 py-5 text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">Privilege Level</th>
-                    <th className="px-8 py-5 text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">Operational Status</th>
-                    <th className="px-8 py-5 text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] text-right">Actions</th>
+                    <th className="px-8 py-5 text-[10px] font-black text-black dark:text-slate-400 uppercase tracking-[0.2em]">Full Identity</th>
+                    <th className="px-8 py-5 text-[10px] font-black text-black dark:text-slate-400 uppercase tracking-[0.2em]">Privilege Level</th>
+                    <th className="px-8 py-5 text-[10px] font-black text-black dark:text-slate-400 uppercase tracking-[0.2em]">Operational Status</th>
+                    <th className="px-8 py-5 text-[10px] font-black text-black dark:text-slate-400 uppercase tracking-[0.2em] text-right">Actions</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100 dark:divide-white/5">
@@ -161,7 +161,7 @@ export default function AdminPage() {
                               {u.name?.charAt(0)}
                             </div>
                             <div>
-                              <p className="text-sm font-black text-slate-900 dark:text-white uppercase tracking-tight">{u.name}</p>
+                               <p className="text-sm font-bold text-black dark:text-white uppercase tracking-tight">{u.name}</p>
                               <div className="flex items-center gap-1.5 text-slate-400">
                                 <Mail className="w-3 h-3" />
                                 <span className="text-[11px] font-bold">{u.email}</span>
@@ -240,7 +240,7 @@ export default function AdminPage() {
               <Lock className="w-32 h-32" />
             </div>
             <h3 className="font-black text-lg uppercase tracking-tight relative z-10">System Logs</h3>
-            <p className="text-[11px] font-bold text-slate-400 mt-2 uppercase tracking-widest relative z-10">Monitor all administrative actions.</p>
+            <p className="text-[11px] font-bold text-slate-300 dark:text-slate-400 mt-2 uppercase tracking-widest relative z-10">Monitor all administrative actions.</p>
             <button 
               onClick={() => alert('Audit trail access granted.')}
               className="mt-8 w-full py-4 bg-white/5 hover:bg-white/10 rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] transition-all border border-white/10 relative z-10 active:scale-95"
