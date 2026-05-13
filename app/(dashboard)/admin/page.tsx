@@ -112,7 +112,7 @@ export default function AdminPage() {
                   <Users className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="font-black text-lg uppercase tracking-tight text-slate-900 dark:text-white">System Users</h3>
+                  <div className="font-black text-lg uppercase tracking-tight text-slate-900 dark:text-white">System Users</div>
                   <p className="text-[10px] font-black text-slate-600 dark:text-slate-300 uppercase tracking-widest">{systemUsers.length} TOTAL ACCOUNTS</p>
                 </div>
               </div>
@@ -213,7 +213,7 @@ export default function AdminPage() {
         {/* Sidebar Settings Section */}
         <div className="space-y-8">
           <div className="bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-white/10 rounded-[40px] p-10 shadow-2xl shadow-slate-200/20 dark:shadow-none">
-            <h3 className="font-black text-[10px] uppercase tracking-[0.3em] text-slate-500 dark:text-slate-400 mb-10 border-b border-slate-100 dark:border-white/5 pb-4">Security Policies</h3>
+            <div className="font-black text-[10px] uppercase tracking-[0.3em] text-slate-500 dark:text-slate-400 mb-10 border-b border-slate-100 dark:border-white/5 pb-4">Security Policies</div>
             <div className="space-y-8">
               {policies.map((policy) => (
                 <div key={policy.id} className="flex items-center justify-between">
@@ -239,7 +239,7 @@ export default function AdminPage() {
             <div className="absolute -top-6 -right-6 opacity-5 group-hover:scale-110 transition-transform duration-700">
               <Lock className="w-32 h-32" />
             </div>
-            <h3 className="font-black text-lg uppercase tracking-tight relative z-10">System Logs</h3>
+            <h3 className="font-black text-lg uppercase tracking-tight relative z-10 !text-white">System Logs</h3>
             <p className="text-[11px] font-bold text-slate-300 dark:text-slate-400 mt-2 uppercase tracking-widest relative z-10">Monitor all administrative actions.</p>
             <button 
               onClick={() => alert('Audit trail access granted.')}

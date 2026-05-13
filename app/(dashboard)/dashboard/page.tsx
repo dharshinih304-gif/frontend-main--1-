@@ -193,12 +193,12 @@ export default function DashboardPage() {
       {/* 51 Categories Grid Section on Dashboard */}
       <div className="bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-3xl p-6 shadow-sm">
         <div className="flex items-center justify-between mb-8">
-          <h2 className="text-sm font-black flex items-center gap-2 text-slate-900 dark:text-white uppercase tracking-[0.2em]">
+          <div className="text-sm font-black flex items-center gap-2 text-slate-900 dark:text-white uppercase tracking-[0.2em]">
             <div className="p-2 bg-accent rounded-xl text-white shadow-lg shadow-accent/20">
               <CheckCircle2 className="w-5 h-5" />
             </div>
             Inspection Modules
-          </h2>
+          </div>
           <span className="text-[10px] font-black text-slate-600 dark:text-slate-300 uppercase tracking-[0.2em] bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full">{INSPECTION_TABLES.length} Categories</span>
         </div>
 
